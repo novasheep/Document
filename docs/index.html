@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>文档模板</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="description" content="文档描述">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@latest/lib/themes/vue.css">
+    <style>
+        /* 脚注样式 */
+        .footnote {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #42b883;
+            font-size: 0.9em;
+            line-height: 1.4;
+        }
+        .footnote p {
+            margin: 0;
+        }
+        sup a {
+            color: #42b883;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        sup a:hover {
+            text-decoration: underline;
+        }
+        .footnote a {
+            color: #42b883;
+            text-decoration: none;
+            margin-left: 5px;
+        }
+        .footnote a:hover {
+            text-decoration: underline;
+        }
+        /* Mermaid图表样式 */
+        .mermaid {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .mermaid svg {
+            max-width: 100%;
+            height: auto;
+        }
+        /* Logo样式 */
+        .app-name-link {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 0;
+        }
+        .app-name-link img {
+            max-height: 60px;
+            width: auto;
+            margin: 0 auto;
+            vertical-align: middle;
+            display: block !important;
+        }
+        .app-name {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        /* 隐藏文字，只显示logo */
+        .app-name-link .app-name-text {
+            display: none;
+        }
+        /* 调整侧边栏logo区域 */
+        .sidebar .app-name {
+            text-align: center;
+            padding: 15px 0;
+        }
+        /* 语言切换器样式 */
+        .app-nav {
+            position: fixed;
+            right: 20px;
+            top: 20px;
+            z-index: 10;
+        }
+        .app-nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .app-nav li {
+            display: inline-block;
+        }
+        #lang-selector {
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 6px 12px;
+            font-size: 14px;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        #lang-selector:hover {
+            border-color: #42b883;
+        }
+        #lang-selector:focus {
+            outline: none;
+            border-color: #42b883;
+            box-shadow: 0 0 0 2px rgba(66, 184, 131, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app"></div>
+    <script src="//cdn.jsdelivr.net/npm/mermaid@8.0.0-rc.8/dist/mermaid.min.js"></script>
+    <script>
+        window.$docsify = {
+            name: 'Document',
+            repo: 'novasheep/Document',
+            logo: './logo.svg',
+            loadSidebar: true,
+            auto2top: true,
+            subMaxLevel: 3,
+            alias: {
+                '/en/_sidebar.md': '/en/_sidebar.md',
+                '/en/.*/_sidebar.md': '/en/_sidebar.md',
+                '/.*/_sidebar.md': '/_sidebar.md'
+            },
+            search: {
+                maxAge: 86400000,
+                paths: 'auto',
+                placeholder: {
+                    '/en/': 'Search',
+                    '/': '搜索'
+                },
+                noData: {
+                    '/en/': 'No Results',
+                    '/': '找不到结果'
+                },
+                depth: 6
+            },
+            pagination: {
+                previousText: {
+                    '/en/': 'Previous',
+                    '/': '上一章节'
+                },
+                nextText: {
+                    '/en/': 'Next',
+                    '/': '下一章节'
+                }
+            },
+            count: {
+                countable: true,
+                fontsize: '0.9em',
+                color: 'rgb(90,90,90)',
+                language: 'chinese'
+            },
+
+            plugins: [
+                function(hook, vm) {
+                    hook.beforeEach(function (html) {
+                        // 渲染前仅处理脚注“引用”，并避免匹配定义行 [^x]:
+                        html = html.replace(/\[\^([^\]]+)\](?!:)/g, '<sup class="footnote-ref"><a href="#fn-$1" data-footnote-ref="$1" id="fnref-$1">$1</a></sup>');
+                        return html;
+                    });
+
+                    // 渲染后处理脚注“定义”，保留 Markdown 已生成的外链等 HTML
+                    hook.afterEach(function (html, next) {
+                        try {
+                            html = html.replace(/<p>\s*\[\^([^\]]+)\]:\s*([\s\S]*?)<\/p>/g, function(_, id, content) {
+                                return '<div class="footnote" id="fn-' + id + '"><p>' + content + ' <a href="#fnref-' + id + '">↩</a></p></div>';
+                            });
+                        } catch (e) { /* 忽略 */ }
+                        next(html);
+                    });
+
+                    hook.doneEach(function () {
+                        try {
+                            // 重新绑定点击事件，拦截脚注链接，平滑滚动到同页目标
+                            var prev = window.__footnoteContainer;
+                            var prevHandler = window.__footnoteHandler;
+                            if (prev && prevHandler) {
+                                prev.removeEventListener('click', prevHandler, true);
+                            }
+
+                            var container = document.querySelector('.markdown-section');
+                            if (!container) return;
+
+                            var handler = function (e) {
+                                var a = e.target && e.target.closest ? e.target.closest('a') : null;
+                                if (!a) return;
+                                var href = a.getAttribute('href') || '';
+                                if (!/^#(fn-|fnref-)/.test(href)) return;
+                                var targetId = href.slice(1);
+                                var el = document.getElementById(targetId);
+                                if (!el) return;
+                                e.preventDefault();
+                                e.stopPropagation();
+                                try { el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+                                catch (_) { el.scrollIntoView(true); }
+                            };
+
+                            container.addEventListener('click', handler, true);
+                            window.__footnoteContainer = container;
+                            window.__footnoteHandler = handler;
+                        } catch (e) {
+                            // 忽略脚注绑定中的异常
+                        }
+                    });
+                },
+                // 语言切换插件
+                function(hook, vm) {
+                    hook.mounted(function() {
+                        // 添加语言切换按钮到导航栏
+                        var nav = document.querySelector('.app-nav');
+                        if (!nav) {
+                            nav = document.createElement('nav');
+                            nav.className = 'app-nav';
+                            document.querySelector('main').appendChild(nav);
+                        }
+
+                        var langSwitcher = document.createElement('ul');
+                        langSwitcher.innerHTML = `
+                            <li>
+                                <select id="lang-selector" style="background: transparent; border: 1px solid #ccc; border-radius: 4px; padding: 4px 8px;">
+                                    <option value="">中文</option>
+                                    <option value="en">English</option>
+                                </select>
+                            </li>
+                        `;
+                        nav.appendChild(langSwitcher);
+
+                        // 监听语言切换
+                        var selector = document.getElementById('lang-selector');
+                        selector.addEventListener('change', function(e) {
+                            var lang = e.target.value;
+                            var currentPath = location.hash.replace('#/', '');
+
+                            if (lang === '') {
+                                // 切换到中文
+                                if (currentPath.startsWith('en/')) {
+                                    location.hash = '#/' + currentPath.replace('en/', '');
+                                } else {
+                                    location.hash = '#/';
+                                }
+                            } else {
+                                // 切换到英文
+                                if (currentPath === '' || currentPath === '/') {
+                                    location.hash = '#/en/';
+                                } else if (currentPath.startsWith('en/')) {
+                                    // 已经在英文页面
+                                    return;
+                                } else {
+                                    location.hash = '#/en/' + currentPath;
+                                }
+                            }
+                        });
+
+                        // 根据当前路径设置选择器状态
+                        function updateSelector() {
+                            var currentPath = location.hash.replace('#/', '');
+                            if (currentPath.startsWith('en/')) {
+                                selector.value = 'en';
+                            } else {
+                                selector.value = '';
+                            }
+                        }
+
+                        updateSelector();
+
+                        // 监听路由变化
+                        window.addEventListener('hashchange', updateSelector);
+                    });
+                },
+                // 重写原始 HTML <img> 的相对路径，使其与 docsify 的 Markdown 图片解析一致
+                function(hook, vm) {
+                    function getRouteDir() {
+                        var hash = decodeURIComponent(window.location.hash || '');
+                        if (!hash || hash === '#/' || hash === '#') return '';
+                        var path = hash.replace(/^#\//, '').replace(/(\?.*|#.*)/g, '');
+                        if (path && !path.endsWith('/')) {
+                            path = path.replace(/[^\/]*$/, '');
+                        }
+                        return path;
+                    }
+
+                    hook.doneEach(function() {
+                        try {
+                            var routeDir = getRouteDir();
+                            // location.pathname 例如: /Document/
+                            var base = window.location.origin + window.location.pathname + routeDir;
+                            var selector = '.markdown-section img:not([data-origin])';
+                            var imgs = document.querySelectorAll(selector);
+                            imgs.forEach(function(img) {
+                                var src = img.getAttribute('src');
+                                if (!src) return;
+                                // 跳过已是绝对路径或以 / 开头的路径
+                                if (/^(https?:)?\/\//i.test(src) || src.startsWith('/')) return;
+                                try {
+                                    // 利用 URL 自动规范化 ./ 和 ../
+                                    var abs = new URL(src, base).pathname;
+                                    img.setAttribute('src', abs);
+                                } catch (e) {
+                                    // 忽略单个元素的失败
+                                }
+                            });
+                        } catch (e) {
+                            // 忽略整体处理失败，避免影响页面其他功能
+                        }
+                    });
+                }
+            ]
+        }
+    </script>
+    <!-- Put them above docsify.min.js -->
+    <script src="//cdn.jsdelivr.net/npm/docsify@latest/lib/docsify.min.js"></script>
+    <!-- 搜索功能 -->
+    <script src="//cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+    <!-- code render-->
+    <script src="//cdn.jsdelivr.net/npm/prismjs@latest/components/prism-bash.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/prismjs@latest/components/prism-python.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-pagination@latest/dist/docsify-pagination.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/docsify-copy-code"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/marked@3"></script>
+    <!-- CDN files for docsify-katex -->
+    <script src="//cdn.jsdelivr.net/npm/docsify-katex@latest/dist/docsify-katex.js"></script>
+    <!-- 字数统计 -->
+    <script src="//unpkg.com/docsify-count/dist/countable.js"></script>
+    <!-- Mermaid -->
+    <script src="//cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+    <script src="//unpkg.com/docsify-mermaid@latest/dist/docsify-mermaid.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true });</script>
+
+</body>
+
+</html>
