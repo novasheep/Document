@@ -19,17 +19,9 @@
   <a href="https://novasheep.github.io/Document/">
     <img src="https://img.shields.io/badge/📖_在线阅读-立即开始-success?style=for-the-badge&logoColor=white" alt="在线阅读"/>
   </a>
-</div>
-<br/>
-<div align="center">
-  <table align="center">
-    <tr>
-      <td align="center">🎯 <strong>系统化学习</strong><br>完整的RAG技术体系</td>
-      <td align="center">🛠️ <strong>动手实践</strong><br>丰富的项目案例</td>
-      <td align="center">🚀 <strong>生产就绪</strong><br>工程化最佳实践</td>
-      <td align="center">📊 <strong>多模态支持</strong><br>文本+图像检索</td>
-    </tr>
-  </table>
+  <a href="README_en.md">
+    <img src="https://img.shields.io/badge/🌍_English-Version-blue?style=for-the-badge&logoColor=white" alt="English Version"/>
+  </a>
 </div>
 
 

@@ -1,181 +1,98 @@
-# Document | Large Model Application Development Practice: RAG Technology Full-Stack Guide
+# Document Title
 
 <div align='center'>
-  <img src="logo.svg" alt="Document Logo" width="70%">
+  <img src="./logo.svg" alt="Logo" width="10%">
 </div>
 
-## Project Introduction [![Stars](https://img.shields.io/github/stars/novasheep/Document?style=social)](https://github.com/novasheep/Document/stargazers) ![GitHub forks](https://img.shields.io/github/forks/novasheep/Document) [![Python](https://img.shields.io/badge/Python-3.12.7-blue)](https://www.python.org/) [![Online Reading](https://img.shields.io/badge/Online%20Reading-Click%20Here-blue)](https://novasheep.github.io/)
+<div align="center">
+  <h2>Subheading</h2>
+  <p><em>Document Description</em></p>
+</div>
 
-[中文](/) | English
+<div align="center">
+  <img src="https://img.shields.io/github/stars/novasheep/Document?style=for-the-badge&logo=github&color=ff6b6b" alt="GitHub stars"/>
+  <img src="https://img.shields.io/github/forks/novasheep/Document?style=for-the-badge&logo=github&color=4ecdc4" alt="GitHub forks"/>
+  <img src="https://img.shields.io/badge/Python-3.12.7-blue?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
+  <a href="https://zread.ai/novasheep/Document">
+    <img src="https://img.shields.io/badge/Ask_Zread-_.svg?style=for-the-badge&color=00b0aa&labelColor=000000&logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQuOTYxNTYgMS42MDAxSDIuMjQxNTZDMS44ODgxIDEuNjAwMSAxLjYwMTU2IDEuODg2NjQgMS42MDE1NiAyLjI0MDFWNC45NjAxQzEuNjAxNTYgNS4zMTM1NiAxLjg4ODEgNS42MDAxIDIuMjQxNTYgNS42MDAxSDQuOTYxNTZDNS4zMTUwMiA1LjYwMDEgNS42MDE1NiA1LjMxMzU2IDUuNjAxNTYgNC45NjAxVjIuMjQwMUM1LjYwMTU2IDEuODg2NjQgNS4zMTUwMiAxLjYwMDEgNC45NjE1NiAxLjYwMDFaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00Ljk2MTU2IDEwLjM5OTlIMi4yNDE1NkMxLjg4ODEgMTAuMzk5OSAxLjYwMTU2IDEwLjY4NjQgMS42MDE1NiAxMS4wMzk5VjEzLjc1OTlDMS42MDE1NiAxNC4xMTM0IDEuODg4MSAxNC4zOTk5IDIuMjQxNTYgMTQuMzk5OUg0Ljk2MTU2QzUuMzE1MDIgMTQuMzk5OSA1LjYwMTU2IDE0LjExMzQgNS42MDE1NiAxMy43NTk5VjExLjAzOTlDNS42MDE1NiAxMC42ODY0IDUuMzE1MDIgMTAuMzk5OSA0Ljk2MTU2IDEwLjM5OTlaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik0xMy43NTg0IDEuNjAwMUgxMS4wMzg0QzEwLjY4NSAxLjYwMDEgMTAuMzk4NCAxLjg4NjY0IDEwLjM5ODQgMi4yNDAxVjQuOTYwMUMxMC4zOTg0IDUuMzEzNTYgMTAuNjg1IDUuNjAwMSAxMS4wMzg0IDUuNjAwMUgxMy43NTg0QzE0LjExMTkgNS42MDAxIDE0LjM5ODQgNS4zMTM1NiAxNC4zOTg0IDQuOTYwMVYyLjI0MDFDMTQuMzk4NCAxLjg4NjY0IDE0LjExMTkgMS42MDAxIDEzLjc1ODQgMS42MDAxWiIgZmlsbD0iI2ZmZiIvPgo8cGF0aCBkPSJNNCAxMkwxMiA0TDQgMTJaIiBmaWxsPSIjZmZmIi8%2BCjxwYXRoIGQ9Ik00IDEyTDEyIDQiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIvPgo8L3N2Zz4K&logoColor=ffffff" alt="zread"/>
+  </a>
+</div>
 
-This project is a comprehensive RAG (Retrieval-Augmented Generation) technology full-stack tutorial for large model application developers. It aims to help developers master RAG application development skills based on large language models through systematic learning paths and hands-on practice projects, building production-grade intelligent Q&A and knowledge retrieval systems.
+<div align="center">
+  <a href="https://novasheep.github.io/Document/">
+    <img src="https://img.shields.io/badge/📖_Online_Reading-Get Started-success?style=for-the-badge&logoColor=white" alt="在线阅读"/>
+  </a>
+  <a href="README.md">
+    <img src="https://img.shields.io/badge/🌍_English-Version-blue?style=for-the-badge&logoColor=white" alt="English Version"/>
+  </a>
+</div>
+
+
+
+
+## Project Introduction ([中文](/) | English)
+
+This project aims to help developers quickly build knowledge documents and construct deployable online knowledge documents.
 
 **Main content includes:**
 
-1. **RAG Technology Fundamentals**: In-depth introduction to RAG core concepts, technical principles, and application scenarios
-2. **Complete Data Processing Pipeline**: From data loading, cleaning to text chunking - the complete data preparation process
-3. **Index Construction and Optimization**: Vector embedding, multimodal embedding, vector database construction and index optimization techniques
-4. **Advanced Retrieval Techniques**: Hybrid retrieval, query construction, Text2SQL and other advanced retrieval technologies
-5. **Generation Integration and Evaluation**: Formatted generation, system evaluation and optimization methods
-6. **Project Practice**: Complete RAG application development practice from basic to advanced
+1. **Project Structure Introduction**
+2. **Document Syntax Writing**
 
 ## Project Significance
 
-With the rapid development of large language models, RAG technology has become the core technology for building intelligent Q&A systems and knowledge retrieval applications. However, existing RAG tutorials are often scattered and lack systematicity, making it difficult for beginners to form a complete understanding of the technical system.
-
-Starting from practice and combining the latest RAG technology development trends, this project builds a complete RAG learning system to help developers:
-- Systematically master the theoretical foundation and practical skills of RAG technology
-- Understand the complete architecture of RAG systems and the role of each component
-- Develop the ability to independently develop RAG applications
-- Master evaluation and optimization methods for RAG systems
-
-## Target Audience
-
-**This project is suitable for the following groups:**
-- Developers with Python programming foundation who are interested in RAG technology
-- AI engineers who want to systematically learn RAG technology
-- Product developers who want to build intelligent Q&A systems
-- Researchers with learning needs for retrieval-augmented generation technology
-
-**Prerequisites:**
-- Master Python basic syntax and usage of common libraries
-- Ability to use Docker simply
-- Understanding of basic LLM concepts (recommended but not required)
-- Basic Linux command line operation skills
-
-## Project Highlights
-
-1. **Systematic Learning Path**: From basic concepts to advanced applications, building a complete RAG technology learning system
-2. **Theory and Practice Combined**: Each chapter includes theoretical explanation and code practice to ensure learning and application
-3. **Multimodal Support**: Covers not only text RAG, but also multimodal embedding and retrieval technologies
-4. **Engineering-Oriented**: Focus on engineering problems in practical applications, including performance optimization, system evaluation, etc.
-5. **Rich Practical Projects**: Provides multiple practical projects from basic to advanced to help consolidate learning outcomes
+To help developers quickly build knowledge documents and construct deployable online knowledge documents.
 
 ## Content Outline
 
-### Part I: RAG Fundamentals
+- Table of Contents
+    - Chapter 1 Document Writing Guide
+        - [Section 1 Document Structure](chapter1/structure.md)
+        - [Section 2 Writing Syntax](chapter1/grammar.md)
+    - Chapter 2 Deploying GitHub Page
+        - [Section 1 Deployment](chapter2/grammar.md)
 
-**Chapter 1 Unlocking RAG** [📖 View Chapter](en/chapter1)
-1. [x] [RAG Introduction](en/chapter1/01_RAG_intro.md) - RAG technology overview and application scenarios
-2. [x] [Preparation](en/chapter1/02_preparation.md) - Environment configuration and tool preparation
-3. [x] [Four Steps to Build RAG](en/chapter1/03_get_start_rag.md) - Quick start with RAG development
 
-**Chapter 2 Data Preparation** [📖 View Chapter](en/chapter2)
-1. [x] [Data Loading](en/chapter2/04_data_load.md) - Multi-format document processing and loading
-2. [x] [Text Chunking](en/chapter2/05_text_chunking.md) - Text segmentation strategies and optimization
 
-### Part II: Index Construction and Optimization
+## Directory Structure Explanation
 
-**Chapter 3 Index Construction** [📖 View Chapter](en/chapter3)
-1. [x] [Vector Embedding](en/chapter3/06_vector_embedding.md) - Detailed explanation of text vectorization technology
-2. [x] [Multimodal Embedding](en/chapter3/07_multimodal_embedding.md) - Image-text multimodal vectorization
-3. [x] [Vector Database](en/chapter3/08_vector_db.md) - Vector storage and retrieval systems
-4. [x] [Milvus Practice](en/chapter3/09_milvus.md) - Milvus multimodal retrieval practice
-5. [x] [Index Optimization](en/chapter3/10_index_optimization.md) - Index performance tuning techniques
-
-### Part III: Advanced Retrieval Techniques
-
-**Chapter 4 Retrieval Optimization** [📖 View Chapter](en/chapter4)
-1. [x] [Hybrid Search](en/chapter4/11_hybrid_search.md) - Dense + sparse retrieval fusion
-2. [x] [Query Construction](en/chapter4/12_query_construction.md) - Intelligent query understanding and construction
-3. [x] [Text2SQL](en/chapter4/13_text2sql.md) - Natural language to SQL query
-4. [x] [Query Rewriting and Routing](en/chapter4/14_query_rewriting.md) - Query optimization strategies
-5. [x] [Advanced Retrieval Techniques](en/chapter4/15_advanced_retrieval_techniques.md) - Advanced retrieval algorithms
-
-### Part IV: Generation and Evaluation
-
-**Chapter 5 Generation Integration** [📖 View Chapter](en/chapter5)
-1. [x] [Formatted Generation](en/chapter5/16_formatted_generation.md) - Structured output and format control
-
-**Chapter 6 RAG System Evaluation** [📖 View Chapter](en/chapter6)
-1. [x] [Evaluation Introduction](en/chapter6/18_system_evaluation.md) - RAG system evaluation methodology
-2. [x] [Evaluation Tools](en/chapter6/19_common_tools.md) - Common evaluation tools and metrics
-
-### Part V: Advanced Applications and Practice
-
-**Chapter 7 Advanced RAG Architecture (Extended Elective)** [📖 View Chapter](en/chapter7)
-
-1. [x] [Knowledge Graph-based RAG](en/chapter7/20_kg_rag.md)
-
-**Chapter 8 Project Practice I (Basic)** [📖 View Chapter](en/chapter8)
-1. [x] [Environment Configuration and Project Architecture](en/chapter8/01_env_architecture.md)
-2. [x] [Data Preparation Module Implementation](en/chapter8/02_data_preparation.md)
-3. [x] [Index Construction and Retrieval Optimization](en/chapter8/03_index_retrieval.md)
-4. [x] [Generation Integration and System Integration](en/chapter8/04_generation_sys.md)
-
-**Chapter 9 Project Practice I Optimization (Elective)** [📖 View Chapter](en/chapter9)
-
-[🍽️ Project Demo](https://github.com/FutureUnreal/What-to-eat-today)
-1. [x] [Graph RAG Architecture Design](en/chapter9/01_graph_rag_architecture.md)
-2. [x] [Graph Data Modeling and Preparation](en/chapter9/02_graph_data_modeling.md)
-3. [x] [Milvus Index Construction](en/chapter9/03_index_construction.md)
-4. [x] [Intelligent Query Routing and Retrieval Strategy](en/chapter9/04_intelligent_query_routing.md)
-
-**Chapter 10 Project Practice II (Elective)** [📖 View Chapter](en/chapter10) *In Planning*
-
-## Directory Structure
-
+```bash
+├─ code           <--- Code Directory
+├─ data           <--- Data Directory
+├─ docs           <--- Notes Directory
+│  ├─ chapter1
+│  │  ├─ images   <--- Static Resources
+│  │  └─ xxx.md   <--- markdown notes
+│  ├─ chapterX
+│  ├─ en          <--- English Notes Directory
+│  │  ├─ chapter1
+│  │  │  ├─ images   <--- Static Resources
+│  │  │  └─ xxx.md   <--- markdown notes
+│  │  └─ chapterX
+│  │─ _sidebar.md    <--- Table of Contents Page
+│  │─ logo.svg
+│  │─ index.html
+│  └─ README.md      <--- Homepage
+├─ .gitignore
+├─ README_en.md
+└─ README.md
 ```
-Document/
-├── docs/           # Tutorial documentation
-├── code/           # Code examples
-├── data/           # Sample data
-├── models/         # Pre-trained models
-└── README.md       # Project description
-```
-
-## Practical Project Showcase
-
-### Chapter 8 Project I:
-
-![Project I](../project01.png)
-
-### Chapter 9 Project I (Graph RAG Optimization):
-
-![Project I (Graph RAG Optimization)](../project01_graph.png)
-
-### Chapter 10 Project II:
-
-## Acknowledgments
-
-**Core Contributors**
-- [Yin Dalv - Project Lead](https://github.com/FutureUnreal) (Project initiator and main contributor)
-
-### Special Thanks
-- Thanks to [@Sm1les](https://github.com/Sm1les) for help and support on this project
-- Thanks to all developers who contributed to this project
-- Thanks to the open source community for providing excellent tools and framework support
-- Special thanks to the following developers who contributed to the tutorial!
-
-[![Contributors](https://contrib.rocks/image?repo=novasheep/Document)](https://github.com/novasheep/Document/graphs/contributors)
-
-*Made with [contrib.rocks](https://contrib.rocks).*
 
 ## Contributing
 
-We welcome all forms of contributions, including but not limited to:
+We welcome contributions of all forms, including but not limited to:
 
-- 🚨 **Bug Reports**: Please submit [Issues](https://github.com/novasheep/Document/issues) if you find problems
-- 💭 **Feature Suggestions**: Welcome to discuss good ideas in [Discussions](https://github.com/novasheep/Document/discussions)
-- 📚 **Documentation Improvement**: Help improve documentation content and example code
-- ⚡ **Code Contributions**: Submit [Pull Requests](https://github.com/novasheep/Document/pulls) to improve the project
+- 🚨 **Bug Reports**: If you find an issue, please submit an [Issue](https://github.com/novasheep/Document/issues)
+- 💭 **Tutorial Suggestions**: Welcome to discuss good ideas in [Discussions](https://github.com/novasheep/Document/discussions)
+- 📚 **Documentation Improvements**: Help improve documentation content and example code
 
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=novasheep/Document&type=Date)](https://star-history.com/#novasheep/Document&Date)
 
 <div align="center">
-  <p>If this project helps you, please give us a ⭐️</p>
-  <p>Let more people discover this project (Food protection? Bring it on!)</p>
-</div>
-
-![star](../emoji.png)
-
-## About Datawhale
-
-<div align='center'>
-    <img src="https://raw.githubusercontent.com/novasheep/pumpkin-book/master/res/qrcode.jpeg" alt="Datawhale" width="30%">
-    <p>Scan the QR code to follow Datawhale WeChat Official Account for more quality open source content</p>
+  <p>If this project is helpful to you, please give us a ⭐️</p>
+  <p>Let more people discover this project (Hush? Send it over!)</p>
 </div>
 
 ---
