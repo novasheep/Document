@@ -22,7 +22,7 @@
   <a href="https://novasheep.github.io/Document/">
     <img src="https://img.shields.io/badge/📖_Online_Reading-Get Started-success?style=for-the-badge&logoColor=white" alt="在线阅读"/>
   </a>
-  <a href="README.md">
+  <a href="/">
     <img src="https://img.shields.io/badge/🌍_English-Version-blue?style=for-the-badge&logoColor=white" alt="English Version"/>
   </a>
 </div>

@@ -16,8 +16,11 @@
 </div>
 
 <div align="center">
-  <a href="https://Document.github.io/Document/">
+  <a href="https://novasheep.github.io/Document/">
     <img src="https://img.shields.io/badge/📖_在线阅读-立即开始-success?style=for-the-badge&logoColor=white" alt="在线阅读"/>
+  </a>
+  <a href="en/">
+    <img src="https://img.shields.io/badge/🌍_English-Version-blue?style=for-the-badge&logoColor=white" alt="English Version"/>
   </a>
 </div>
 
