@@ -71,6 +71,3 @@ rag/
 # LLM API keys
 *.key
 *.secret
-
-# Github
-.github
