@@ -35,7 +35,7 @@
 
 
 
-## 项目简介（[中文](README.md) | [English](en/README.md)）
+## 项目简介（中文 | [English](README_en.md)）
 
 本项目旨在帮助开发者快速搭建知识文档，构建可部署的在线知识文档。
 

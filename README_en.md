@@ -30,7 +30,7 @@
 
 
 
-## Project Introduction (中文 | [English](README_en.md))
+## Project Introduction ([中文](README.md) | English)
 
 This project aims to help developers quickly build knowledge documents and construct deployable online knowledge documents.
 
