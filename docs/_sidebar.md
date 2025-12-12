@@ -1,6 +1,46 @@
 - 目录
-    - 第一章 Document写作指导
-        - [第一节 文档结构](chapter1/structure.md)
-        - [第二节 写作语法](chapter1/grammar.md)
-    - 第二章 部署GitHub Page
-        - [第一节 部署](chapter2/grammar.md)
+    - 第一章 解锁RAG
+        - [第一节 RAG简介](chapter1/structure.md)
+        - [第二节 准备工作](chapter1/grammar.md)
+        - [第三节 四步构建RAG](chapter1/grammar.md)
+        - [附：Python虚拟环境部署方案补充](chapter1/grammar.md)
+    - 第二章 数据准备
+        - [第一节 数据加载](chapter2/grammar.md)
+        - [第二节 文本分块](chapter2/05_text_chunking.md)
+    - 第三章 索引构建
+        - [第一节 向量嵌入](chapter3/06_vector_embedding.md)
+        - [第二节 多模态嵌入](chapter3/07_multimodal_embedding.md)
+        - [第三节 向量数据库](chapter3/08_vector_db.md)
+        - [第四节 Milvus实践](chapter3/09_milvus.md)
+        - [第五节 索引优化](chapter3/10_index_optimization.md)
+    - 第四章 检索优化
+        - [第一节 混合检索](chapter4/11_hybrid_search.md)
+        - [第二节 查询构建](chapter4/12_query_construction.md)
+        - [第三节 Text2SQL](chapter4/13_text2sql.md)
+        - [第四节 查询重构与分发](chapter4/14_query_rewriting.md)
+        - [第五节 检索进阶技术](chapter4/15_advanced_retrieval_techniques.md)
+    - 第五章 生成集成
+        - [第一节 格式化生成](chapter5/16_formatted_generation.md)
+    - 第六章 RAG系统评估
+        - [第一节 评估介绍](chapter6/18_system_evaluation.md)
+        - [第二节 评估工具](chapter6/19_common_tools.md)
+    - 第七章 高级RAG架构（拓展选修篇）
+        - [第一节 基于知识图谱的RAG](chapter7/20_kg_rag.md)
+    - 第八章 项目实战一（基础篇）
+        - [环境配置与项目架构](chapter8/01_env_architecture.md)
+        - [数据准备模块实现](chapter8/02_data_preparation.md)
+        - [索引构建与检索优化](chapter8/03_index_retrieval.md)
+        - [生成集成与系统整合](chapter8/04_generation_sys.md)
+    - 第九章 项目实战一优化（选修篇）
+        - [图RAG架构设计](chapter9/01_graph_rag_architecture.md)
+        - [图数据建模与准备](chapter9/02_graph_data_modeling.md)
+        - [Milvus索引构建](chapter9/03_index_construction.md)
+        - [智能查询路由与检索策略](chapter9/04_intelligent_query_routing.md)
+    - 第十章 项目实战二（选修篇）
+        - [规划中...](chapter10/)
+
+    - 第十一章 Neo4J 简单应用
+        - [知识图谱与 Neo4j 安装](chapter11/01_knowledge_graph.md)
+        - [Neo4j 基本使用](chapter11/02_neo4j.md)
+
+    
