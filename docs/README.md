@@ -19,7 +19,7 @@
   <a href="https://novasheep.github.io/Document/">
     <img src="https://img.shields.io/badge/📖_在线阅读-立即开始-success?style=for-the-badge&logoColor=white" alt="在线阅读"/>
   </a>
-  <a href="en/">
+  <a href="https://novasheep.github.io/Document/#/en/">
     <img src="https://img.shields.io/badge/🌍_English-Version-blue?style=for-the-badge&logoColor=white" alt="English Version"/>
   </a>
 </div>
@@ -43,10 +43,10 @@
 ## 内容大纲
 
 - 目录
-    - 第一章 Document写作指导 [📖 查看章节](chapter1)
+    - 第一章 Document写作指导
         - [第一节 文档结构](chapter1/structure.md)
         - [第二节 写作语法](chapter1/grammar.md)
-    - 第二章 部署GitHub Page [📖 查看章节](chapter2)
+    - 第二章 部署GitHub Page
         - [第一节 部署](chapter2/grammar.md)
 
 
@@ -66,6 +66,7 @@
 │  │  │  ├─ images   <--- 静态资源
 │  │  │  └─ xxx.md   <--- markdown笔记
 │  │  └─ chapterX
+│  │─ .nojekyll      <--- 防止Github忽视下划线开头文件
 │  │─ _sidebar.md    <--- 目录页
 │  │─ logo.svg
 │  │─ index.html

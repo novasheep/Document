@@ -66,6 +66,7 @@
 │  │  │  ├─ images   <--- 静态资源
 │  │  │  └─ xxx.md   <--- markdown笔记
 │  │  └─ chapterX
+│  │─ .nojekyll      <--- 防止Github忽视下划线开头文件
 │  │─ _sidebar.md    <--- 目录页
 │  │─ logo.svg
 │  │─ index.html

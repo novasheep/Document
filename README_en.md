@@ -69,6 +69,7 @@ To help developers quickly build knowledge documents and construct deployable on
 │  │  │  ├─ images   <--- Static Resources
 │  │  │  └─ xxx.md   <--- markdown notes
 │  │  └─ chapterX
+│  │─ .nojekyll      <--- Prevent GitHub from ignoring files starting with an underscore
 │  │─ _sidebar.md    <--- Table of Contents Page
 │  │─ logo.svg
 │  │─ index.html

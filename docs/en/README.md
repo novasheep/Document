@@ -22,7 +22,7 @@
   <a href="https://novasheep.github.io/Document/">
     <img src="https://img.shields.io/badge/📖_Online_Reading-Get Started-success?style=for-the-badge&logoColor=white" alt="在线阅读"/>
   </a>
-  <a href="/">
+  <a href="https://novasheep.github.io/Document/#/">
     <img src="https://img.shields.io/badge/🌍_English-Version-blue?style=for-the-badge&logoColor=white" alt="English Version"/>
   </a>
 </div>
@@ -69,6 +69,7 @@ To help developers quickly build knowledge documents and construct deployable on
 │  │  │  ├─ images   <--- Static Resources
 │  │  │  └─ xxx.md   <--- markdown notes
 │  │  └─ chapterX
+│  │─ .nojekyll      <--- Prevent GitHub from ignoring files starting with an underscore
 │  │─ _sidebar.md    <--- Table of Contents Page
 │  │─ logo.svg
 │  │─ index.html
