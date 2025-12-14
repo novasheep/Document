@@ -71,5 +71,3 @@ rag/
 # LLM API keys
 *.key
 *.secret
-
-# test
